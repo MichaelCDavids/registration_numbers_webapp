@@ -13,11 +13,11 @@ const Pool = pg.Pool
 let useSSL = false
 let local = process.env.LOCAL || false
 
-if (process.env.DATABASE_URL && !local) {
+if (process.env.HEROKU_POSTGRESQL_PINK_URL && !local) {
     useSSL = true
 }
 
-const connectionString = process.env.DATABASE_URL || 'postgresql://coder:pg123@localhost:5432/registration_numbers'
+const connectionString = process.env.HEROKU_POSTGRESQL_PINK_URL || 'postgresql://coder:pg123@localhost:5432/registration_numbers'
 
 const pool = new Pool({
     connectionString,
