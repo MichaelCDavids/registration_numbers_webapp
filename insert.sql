@@ -1,0 +1,15 @@
+delete from towns;
+insert into towns (starts_with, town_name) values ('','All');
+insert into towns (starts_with, town_name) values ('CY','Bellville');
+insert into towns (starts_with, town_name) values ('CA','Cape Town');
+insert into towns (starts_with, town_name) values ('CAW','George');
+insert into towns (starts_with, town_name) values ('CEO','Grabouw');
+insert into towns (starts_with, town_name) values ('CEM','Hermanus');
+insert into towns (starts_with, town_name) values ('CF','Kraaifontein');
+insert into towns (starts_with, town_name) values ('CAM','Kleinmond');
+insert into towns (starts_with, town_name) values ('CFR','Kuils River');
+insert into towns (starts_with, town_name) values ('CK','Malmesbury');
+insert into towns (starts_with, town_name) values ('CJ','Paarl');
+insert into towns (starts_with, town_name) values ('CFM','Somerset West');
+insert into towns (starts_with, town_name) values ('CEY','Strand');
+insert into towns (starts_with, town_name) values ('CW','Worcester');

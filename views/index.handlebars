@@ -1,0 +1,50 @@
+<head>
+    <meta charset="utf-8">
+    <title>Registration Numbers</title>
+    <link rel="stylesheet" href="/css/registration_numbers.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <div class="page-wrapper">
+        {{#if messages.info}}
+        <div class="ten columns offset-by-one columns entry">
+            <p>{{messages.info}}</p>
+        </div>
+        {{/if}}
+        <form action="/reg_number" method='post'>
+            <div class="input-section">
+                <input id="regNumber" type="text" maxlength="11" class="registration-number-field" name="registrationNumber" placeholder=" CA 123 456 "
+                    title="Enter an alphanumeric registration number  e.g( CA 123 456 )">
+                <button type="submit" class="add-button" class="add-button">Add</button>
+                <!--Add Button-->
+            </div>
+            <!--End of input-section-->
+        </form>
+
+        <div class="filter-section">
+            {{!--
+            <form action="/reg_number/location" method="get"> --}}
+                <select id="selectFilter" name="location" value="{{town}}">
+                    {{#each data.towns}}
+                    <option value="{{this.starts_with}}">{{this.town_name}}</option>
+                    {{/each}}
+                </select>
+                <button type="submit" id="apply-filter" name="apply-filter">Apply</button>
+                {{!-- </form> --}}
+        </div>
+
+        <div class="output-section">
+            <ul id="my-list" class="registration_list">
+                {{#each data.registrations}}
+                <li>{{reg_number}}</li>
+                {{/each}}
+            </ul>
+            <!--End of registration_list-->
+        </div>
+        <!--End of output-section-->
+    </div>
+    <!--End of page-wrapper-->
+</body>
+
+</html>
