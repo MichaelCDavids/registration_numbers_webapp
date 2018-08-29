@@ -1,61 +1,101 @@
-.page-wrapper{
-    background-color: #a4a4a4;
-    width: 100%;
+/* Page Wrapper */
+.page-wrapper {
+  width: 80%;
+  height: 1000px;
+  padding-top: 2%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Flash Messages */
+.entry {
+  width: 90%;
+  height: auto;
+  margin: 2em auto;
+  text-align: center;
+  border: 1px solid aquamarine;
+  background-color: azure;
+  color: cadetblue;
+}
+
+.entry p {
+  padding: 10px;
+}
+
+/* Buttons */
+.add-button {
+  background-color: #3498DB;
+  color: white;
+  padding: 14px;
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
+  border-radius: 18px;
+}
+
+#apply-filter {
+  background-color: #3498DB;
+  color: white;
+  padding: 14px;
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
+  border-radius: 18px;
+}
+
+/* Inputs */
+#regNumber {
+  height: 3.2em;
+  text-align: center;
+  border-radius: 18px;
+  border-radius: 18px;
+}
+
+#selectFilter {
+  height: 3em;
+  border-radius: 18px;
+}
+
+/* Registation Numbers List */
+.output-section ul {
+  margin-top: 3em;
+  width: 700px;
+  height: 400px;
+  margin: 0 auto;
+  list-style: none;
+}
+
+.registration_list li {
+  float: left;
+  width: 100px;
+  height: auto;
+  padding: 5px;
+  font-weight: bold;
+  border: 3px solid black;
+  border-radius: 6px;
+  background-color: yellow;
+  text-align: center;
+  margin: 10px;
+}
+
+@media (max-width: 400px) {
+
+  /* Registation Numbers List */
+  .output-section ul {
+    margin-top: 3em;
+    width: auto;
+    height: auto;
     margin: 0 auto;
-    text-align: center;
-  }
-  
-  .input-section {
-    padding: 30px;
-    text-align: center;
-  }
-  
-  .registration-number-field{
-    width:15em;
-    height: 30px;
-  }
-  .filter-section{
-    text-align: center;
-  }
-  
-  .add-button{
-    background-color: #3498DB;
-    color: white;
-    padding: 16px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-  }
-  
-  .output-section{
-    border-top: 5px solid #526589;
-    background-color: #e4e4e4;
-  }
-  .output-section ul li{
     list-style: none;
-    margin: 1em auto;
   }
-  
-  .registration_list {
-    padding:20px;
-  }
-  .registration_list li {
-    padding: 15px;
-    border-radius: 18px;
-    border: 3px solid black;
-    width: 100px;
+}
+
+@media (max-width: 850px) {
+  .output-section ul {
+    margin-top: 3em;
+    width: auto;
     height: auto;
-    background-color: yellow;
-    text-align: center;
+    margin: 0 auto;
+    list-style: none;
   }
-  
-  .entry {
-    border: 1px solid aquamarine;
-    background-color: azure;
-    height: auto;
-    color: cadetblue;
-  }
-  .entry p {
-    padding: 10px;
-  }
-  
+}
