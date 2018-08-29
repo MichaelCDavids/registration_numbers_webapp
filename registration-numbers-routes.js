@@ -1,40 +1,46 @@
 module.exports = function (registrationNumbersInstance) {
     async function index(req, res) {
-        
+
         let data = {
-            towns : await registrationNumbersInstance.getTowns(),
-            registrations : await registrationNumbersInstance.filterRegistration(),
+            towns: await registrationNumbersInstance.getTowns(),
+            registrations: await registrationNumbersInstance.filterRegistration(),
         };
-        
-        res.render('index',{data});
+
+        res.render('index', {
+            data
+        });
     }
 
     async function registration_numbers_get(req, res) {
-        
+
         let town = req.params.location
-    
+
         let data = {
-            towns : await registrationNumbersInstance.getTowns(),
-            registrations : await registrationNumbersInstance.filterRegistration(town),
+            towns: await registrationNumbersInstance.getTowns(),
+            registrations: await registrationNumbersInstance.filterRegistration(town),
         };
-        
-        res.render('index',{data});
+
+        res.render('index', {
+            data
+        });
     }
 
     async function registration_numbers_post(req, res) {
-        
+
         let numberPlate = req.params.plate || req.body.registrationNumber;
         formatedPlate = numberPlate.replace("%20", " ");
 
         let message = await registrationNumbersInstance.addRegistration(numberPlate);
-        
+
         let data = {
-            towns : await registrationNumbersInstance.getTowns(),
-            registrations : await registrationNumbersInstance.filterRegistration()
+            towns: await registrationNumbersInstance.getTowns(),
+            registrations: await registrationNumbersInstance.filterRegistration()
         };
-         
-        req.flash('info',message);
-        res.render('index',{data});
+
+        req.flash('info', message);
+        res.render('index', {
+            data
+        });
     }
 
 
