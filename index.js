@@ -3,12 +3,11 @@ const session = require('express-session')
 const express = require('express')
 const exphbs = require('express-handlebars')
 const bodyParser = require('body-parser')
-const registrationNumbers = require('./registration-numbers-factory')
+const RegistrationNumbers = require('./registration-numbers-factory')
 const RegistrationRoutes = require('./registration-numbers-routes')
 
 const pg = require('pg')
 const Pool = pg.Pool
-
 
 let useSSL = false
 let local = process.env.LOCAL || false
@@ -24,7 +23,6 @@ const pool = new Pool({
     ssl: useSSL
 })
 
-
 let app = express()
 
 app.use(session({
@@ -34,8 +32,8 @@ app.use(session({
 }))
 app.use(flash());
 
-let registrationNumbersInstance = registrationNumbers(pool)
-let registrationRoutes = RegistrationRoutes(registrationNumbersInstance)
+let RegistrationNumbersInstance = RegistrationNumbers(pool)
+let registrationRoutes = RegistrationRoutes(RegistrationNumbersInstance)
 
 app.engine('handlebars', exphbs({
     defaultLayout: 'main'
@@ -48,14 +46,12 @@ app.use(bodyParser.urlencoded({
 }))
 app.use(bodyParser.json())
 
-
 app.get("/", registrationRoutes.index);
-
 app.get("/reg_number", registrationRoutes.registration_numbers_get);
 app.post("/reg_number", registrationRoutes.registration_numbers_post);
+app.get("/reg_numbers", registrationRoutes.registration_numbers_get);
 app.get("/reg_number/:plate", registrationRoutes.registration_numbers_post);
 app.get("/reg_numbers/:location", registrationRoutes.registration_numbers_get);
-
 
 let PORT = process.env.PORT || 3008;
 
