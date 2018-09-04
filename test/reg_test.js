@@ -26,50 +26,6 @@ describe('The addRegistrationNumber function', function () {
     assert.equal(message, 'CD is not a valid town identifier')
   })
 })
-// describe('The doesExist function', function () {
-//   beforeEach(async function () {
-//     await pool.query('delete from registrations')
-//   });
-//   it('should return a message if a registration number has been entered before', async function () {
-//     let RegistrationInstance = RegistrationFactory(pool)
-//     await RegistrationInstance.addRegistration('CA 123 456')
-//     let message = await RegistrationInstance.doesExist('CA 123 456')
-//     assert.equal(message, "vehicle registration number already exists in database")
-//   })
-//   it('should return a message if a registration number has not been entered before', async function () {
-//     let RegistrationInstance = RegistrationFactory(pool)
-//     let message = await RegistrationInstance.doesExist('CA 123 456')
-//     assert.equal(message, "does not exist in database")
-//   })
-// })
-// describe('The validateRegistration function', function () {
-  
-//   it('should return a error message based on specific input', async function () {
-//     let RegistrationInstance = RegistrationFactory(pool)
-//     let message = await RegistrationInstance.validateRegistration('CA ')
-//     assert.equal(message, "vehicle registration number is too short")
-//   })
-//   it('should return a error message based on specific input', async function () {
-//     let RegistrationInstance = RegistrationFactory(pool)
-//     let message = await RegistrationInstance.validateRegistration(' CA 123 456')
-//     assert.equal(message, ` CA 123 456 not a valid western cape vehicle registration number`)
-//   })
-//   it('should return a error message based on specific input', async function () {
-//     let RegistrationInstance = RegistrationFactory(pool)
-//     let message = await RegistrationInstance.validateRegistration('CA** +-+')
-//     assert.equal(message, "vehicle registration number has characters that are not allowed")
-//   })
-//   it('should return a error message based on specific input', async function () {
-//     let RegistrationInstance = RegistrationFactory(pool)
-//     let message = await RegistrationInstance.validateRegistration('CD 123 456')
-//     assert.equal(message, `CD is not a valid town identifier`)
-//   })
-//   it('should return a error message based on specific input', async function () {
-//     let RegistrationInstance = RegistrationFactory(pool)
-//     let message = await RegistrationInstance.validateRegistration('CA 123 456')
-//     assert.equal(message, `valid`)
-//   })
-// })
 describe(' The townList function', function () {
   beforeEach(async function () {
     await pool.query('delete from registrations')
@@ -77,78 +33,73 @@ describe(' The townList function', function () {
   it('should return a list of all the towns that are in the database', async function () {
     let RegistrationInstance = RegistrationFactory(pool)
     let towns = await RegistrationInstance.getTowns()
-    assert.deepEqual(towns, [{
-        "id": 1,
-        "starts_with": "all",
-        "town_name": "All"
-      },
-      {
-        "id": 2,
-        "starts_with": "CY",
-        "town_name": "Bellville"
-      },
-      {
-        "id": 3,
-        "starts_with": "CA",
-        "town_name": "Cape Town"
-      },
-      {
-        "id": 4,
-        "starts_with": "CAW",
-        "town_name": "George"
-      },
-      {
-        "id": 5,
-        "starts_with": "CEO",
-        "town_name": "Grabouw"
-      },
-      {
-        "id": 6,
-        "starts_with": "CEM",
-        "town_name": "Hermanus"
-      },
-      {
-        "id": 7,
-        "starts_with": "CF",
-        "town_name": "Kraaifontein"
-      },
-      {
-        "id": 8,
-        "starts_with": "CAM",
-        "town_name": "Kleinmond"
-      },
-      {
-        "id": 9,
-        "starts_with": "CFR",
-        "town_name": "Kuils River"
-      },
-      {
-        "id": 10,
-        "starts_with": "CK",
-        "town_name": "Malmesbury"
-      },
-      {
-        "id": 11,
-        "starts_with": "CJ",
-        "town_name": "Paarl"
-      },
-      {
-        "id": 12,
-        "starts_with": "CFM",
-        "town_name": "Somerset West"
-      },
-      {
-        "id": 13,
-        "starts_with": "CEY",
-        "town_name": "Strand"
-      },
-      {
-        "id": 14,
-        "starts_with": "CW",
-        "town_name": "Worcester"
-      }
-
-    ])
+    assert.deepEqual(towns,[ { id: 1, town_name: 'All', starts_with: 'all' },
+    { id: 2, town_name: 'Cape Town', starts_with: 'CA' },
+    { id: 3, town_name: 'Caledon & Kleinmond', starts_with: 'CAM' },
+    { id: 4,
+      town_name: 'Clanwilliam & Lamberts Bay',
+      starts_with: 'CAR' },
+    { id: 5, town_name: 'George', starts_with: 'CAW' },
+    { id: 6, town_name: 'Ladismith', starts_with: 'CBL' },
+    { id: 7, town_name: 'Laingsburg', starts_with: 'CBM' },
+    { id: 8, town_name: 'Montagu', starts_with: 'CBR' },
+    { id: 9,
+      town_name: 'Mossel Bay & Hartenbos',
+      starts_with: 'CBS' },
+    { id: 10, town_name: 'Murraysburg', starts_with: 'CBT' },
+    { id: 11, town_name: 'Piketberg', starts_with: 'CBY' },
+    { id: 12, town_name: 'Prince Albert', starts_with: 'CCA' },
+    { id: 13,
+      town_name: 'Riversdale & Still Bay',
+      starts_with: 'CCC' },
+    { id: 14, town_name: 'Robertson & McGregor', starts_with: 'CCD' },
+    { id: 15,
+      town_name: 'Swellendam & Barrydale',
+      starts_with: 'CCK' },
+    { id: 16, town_name: 'Tulbagh', starts_with: 'CCM' },
+    { id: 17, town_name: 'Uniondale', starts_with: 'CCO' },
+    { id: 18,
+      town_name: 'Vanrhynsdorp & Klawer',
+      starts_with: 'CCP' },
+    { id: 19, town_name: 'Moorreesburg', starts_with: 'CEA' },
+    { id: 20, town_name: 'Heidelberg', starts_with: 'CEG' },
+    { id: 21,
+      town_name: 'Hermanus, Gans Bay, Onrus River & Stanford',
+      starts_with: 'CEM' },
+    { id: 22, town_name: 'Grabouw', starts_with: 'CEO' },
+    { id: 23, town_name: 'Bonnievale', starts_with: 'CER' },
+    { id: 24, town_name: 'Albertinia', starts_with: 'CES' },
+    { id: 25, town_name: 'Porterville', starts_with: 'CEX' },
+    { id: 26, town_name: 'Strand & Gordons Bay', starts_with: 'CEY' },
+    { id: 27, town_name: 'Wolseley', starts_with: 'CFA' },
+    { id: 28,
+      town_name: 'Vredenburg & St Helena Bay',
+      starts_with: 'CFG' },
+    { id: 29, town_name: 'Somerset West', starts_with: 'CFM' },
+    { id: 30, town_name: 'Velddrif', starts_with: 'CFP' },
+    { id: 31,
+      town_name: 'Kuilsrivier & Brackenfell',
+      starts_with: 'CFR' },
+    { id: 32, town_name: 'Oudtshoorn', starts_with: 'CG' },
+    { id: 33, town_name: 'Paarl & Franschhoek', starts_with: 'CJ' },
+    { id: 34, town_name: 'Malmesbury & Darling', starts_with: 'CK' },
+    { id: 35, town_name: 'Stellenbosch', starts_with: 'CL' },
+    { id: 36, town_name: 'Wellington', starts_with: 'CN' },
+    { id: 37, town_name: 'Calitzdorp', starts_with: 'CO' },
+    { id: 38, town_name: 'Hopefield & Langebaan', starts_with: 'CR' },
+    { id: 39, town_name: 'Bredasdorp & Napier', starts_with: 'CS' },
+    { id: 40, town_name: 'Ceres', starts_with: 'CT' },
+    { id: 41, town_name: 'Vredendal', starts_with: 'CV' },
+    { id: 42,
+      town_name: 'Worcester, De Doorns & Touwsrivier',
+      starts_with: 'CW' },
+    { id: 43,
+      town_name: 'Knysna, Sedgefield & Plettenberg Bay',
+      starts_with: 'CX' },
+    { id: 44,
+      town_name: 'Bellville, Durbanville & Kraaifontein',
+      starts_with: 'CY' },
+    { id: 45, town_name: 'Beaufort West', starts_with: 'CZ' } ])
   })
 })
 describe('The regFilter function', function () {
@@ -180,5 +131,5 @@ describe('The regFilter function', function () {
   })
   after(async function () {
     await pool.end()
-  })
+  })  
 })
