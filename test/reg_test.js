@@ -12,11 +12,10 @@ const pool = new Pool({
 })
 
 describe('The Registration Numbers WebApp', function () {
-  beforeEach(async function () {
-    await pool.query('delete from registrations')
-  });
-
   describe('The addRegistrationNumber function', function () {
+    beforeEach(async function () {
+      await pool.query('delete from registrations')
+    });
     it('should add a valid registration number', async function () {
       let RegistrationInstance = RegistrationFactory(pool)
       let message = await RegistrationInstance.addRegistration('CA 123 456')
