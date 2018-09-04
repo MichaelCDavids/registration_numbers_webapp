@@ -28,6 +28,9 @@ describe('The Registration Numbers WebApp', function () {
       })
   })
   describe('The doesExist function', function () {
+    beforeEach(async function () {
+      await pool.query('delete from registrations')
+    });
     it('should return a message if a registration number has been entered before', async function () {
         let RegistrationInstance = RegistrationFactory(pool)
         await RegistrationInstance.addRegistration('CA 123 456')
@@ -41,6 +44,9 @@ describe('The Registration Numbers WebApp', function () {
       })
   })
   describe('The validateRegistration function', function () {
+    beforeEach(async function () {
+      await pool.query('delete from registrations')
+    });
     it('should return a error message based on specific input', async function () {
         let RegistrationInstance = RegistrationFactory(pool)
         let message = await RegistrationInstance.validateRegistration('CA ')
@@ -68,6 +74,9 @@ describe('The Registration Numbers WebApp', function () {
       })
   })
   describe(' The townList function', function () {
+    beforeEach(async function () {
+      await pool.query('delete from registrations')
+    });
     it('should return a list of all the towns that are in the database', async function () {
         let RegistrationInstance = RegistrationFactory(pool)
         let towns = await RegistrationInstance.getTowns()
@@ -147,6 +156,9 @@ describe('The Registration Numbers WebApp', function () {
     })
   })
   describe('The regFilter function', function () {
+    beforeEach(async function () {
+      await pool.query('delete from registrations')
+    });
     it('should return a list of registrations that have been stored', async function () {
         let RegistrationInstance = RegistrationFactory(pool)
         let registrationNumbers = await RegistrationInstance.filterRegistration()
