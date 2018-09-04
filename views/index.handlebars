@@ -4,52 +4,36 @@
     <link rel="stylesheet" href="/css/registration_numbers.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
-
-<body>
-    
-    
-    <div class="page-wrapper">
-        
-        <h2>Registration Numbers Webapp</h2>
-        <p>enter a western cape registration number</p>
-        
-        
-        
-        
-        <form action="/reg_number" method='post'>
-            <div class="input-section">
-                <input id="regNumber" type="text" maxlength="11" class="registration-number-field" name="registrationNumber" placeholder=" CA 123 456 " title="Enter an alphanumeric registration number  e.g( CA 123 456 )">
-                <button type="submit" class="add-button" class="add-button">Add</button>
-            </div>
-        </form>
-        
-        
-        
-        <div class="filter-section">
-            <select id="selectFilter" name="location" value="{{town}}">
-                {{#each data.towns}}
-                <option value="{{this.starts_with}}">{{this.town_name}}</option>
-                {{/each}}
-            </select>
-            <button type="submit" id="apply-filter" name="apply-filter">Apply</button>
+<div class="page-wrapper">
+    <i class="fas fa-car fs-10x car"></i>
+    <p>enter a western cape registration number</p>
+    <form action="/reg_number" method='post'>
+        <div class="input-section">
+            <input id="regNumber" type="text" maxlength="11" class="registration-number-field" name="registrationNumber" placeholder=" CA 123 456 "
+                title="Enter an alphanumeric registration number  e.g( CA 123 456 )">
+            <button type="submit" class="add-button" class="add-button">Add</button>
         </div>
-        
-        {{#if messages.info}}
-        <div class="entry">
-            <p>{{messages.info}}</p>
-        </div>
-        {{/if}}
-        
-        
-        <div class="output-section">
-            <ul id="my-list" class="registration_list">
-                {{#each data.registrations}}
-                <li>{{reg_number}}</li>
-                {{/each}}
-            </ul>
-        </div>
-
+    </form>
+    <div class="filter-section">
+        <select id="selectFilter" name="location" value="{{town}}">
+            {{#each data.towns}}
+            <option value="{{this.starts_with}}">{{this.town_name}}</option>
+            {{/each}}
+        </select>
+        <button type="submit" id="apply-filter" name="apply-filter">Apply</button>
     </div>
-</body>
 
-</html>
+    {{#if messages.info}}
+    <div class="entry">
+        <p>{{messages.info}}</p>
+    </div>
+    {{/if}}
+    <div class="output-section">
+        <ul id="my-list" class="registration_list">
+            {{#each data.registrations}}
+            <li>{{reg_number}}</li>
+            {{/each}}
+        </ul>
+    </div>
+
+</div>

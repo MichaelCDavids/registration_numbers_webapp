@@ -1,10 +1,49 @@
+/*  */
+#header{
+  text-align: center;
+  color: aliceblue;
+  background-color: darkorange;
+  width:  100%;
+  height: 5em;
+}
+
+#header i {
+  padding: 1em;
+  font-size: 30px;
+  color:  aliceblue;
+  float: left;
+}
+#header h2{
+  padding-top:20px;
+  font-size: 35px;
+}
+
+footer {
+  text-align: center;
+  color: aliceblue;
+  background-color: darkorange;
+  width:  100%;
+  height: 5em;
+}
+footer p {
+  color: aliceblue;
+  padding: 1em;
+}
+
+.car {
+  font-size: 8em;
+}
+
 /* Page Wrapper */
 .page-wrapper {
   width: 80%;
-  height: 1000px;
+  height: 500px;
+  background-color: ghostwhite;
   padding-top: 2%;
   margin: 0 auto;
   text-align: center;
+  overflow: scroll;
+  scroll-behavior: smooth;
 }
 
 /* Flash Messages */
@@ -24,45 +63,48 @@
 
 /* Buttons */
 .add-button {
-  background-color: #3498DB;
+  background-color: darkorange;
   color: white;
   padding: 14px;
   font-size: 14px;
   border: none;
   cursor: pointer;
-  border-radius: 18px;
+  border-radius: 6px;
 }
 
 #apply-filter {
-  background-color: #3498DB;
+  background-color: darkorange;
   color: white;
   padding: 14px;
   font-size: 14px;
   border: none;
   cursor: pointer;
-  border-radius: 18px;
+  border-radius: 6px;
 }
 
 /* Inputs */
 #regNumber {
   height: 3.2em;
   text-align: center;
-  border-radius: 18px;
-  border-radius: 18px;
+  width:10em;
+  border-radius: 6px;
 }
 
 #selectFilter {
   height: 3em;
-  border-radius: 18px;
+  width:10em;
+  border-radius: 6px;
 }
 
 /* Registation Numbers List */
 .output-section ul {
+  padding-top:2em;
   margin-top: 3em;
   width: 700px;
-  height: 400px;
+  height: auto;
   margin: 0 auto;
   list-style: none;
+  
 }
 
 .registration_list li {
@@ -76,6 +118,7 @@
   background-color: yellow;
   text-align: center;
   margin: 10px;
+  
 }
 
 @media (max-width: 400px) {
