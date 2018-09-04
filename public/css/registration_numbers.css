@@ -2,32 +2,32 @@
 #header{
   text-align: center;
   color: aliceblue;
-  background-color: darkorange;
+  background-color: blueviolet;
   width:  100%;
-  height: 5em;
+  height: 70px;
 }
 
 #header i {
-  padding: 1em;
+  padding: 20px;
   font-size: 30px;
   color:  aliceblue;
   float: left;
 }
-#header h2{
+#header h3{
   padding-top:20px;
-  font-size: 35px;
+  font-size: 25px;
 }
 
 footer {
   text-align: center;
   color: aliceblue;
-  background-color: darkorange;
+  background-color: blueviolet;
   width:  100%;
-  height: 5em;
+  height: 70px;
 }
 footer p {
+  padding-top: 6px;
   color: aliceblue;
-  padding: 1em;
 }
 
 .car {
@@ -36,10 +36,9 @@ footer p {
 
 /* Page Wrapper */
 .page-wrapper {
-  width: 80%;
-  height: 500px;
+  width: 90%;
+  height: 429px;
   background-color: ghostwhite;
-  padding-top: 2%;
   margin: 0 auto;
   text-align: center;
   overflow: scroll;
@@ -63,7 +62,7 @@ footer p {
 
 /* Buttons */
 .add-button {
-  background-color: darkorange;
+  background-color: blueviolet;
   color: white;
   padding: 14px;
   font-size: 14px;
@@ -73,7 +72,7 @@ footer p {
 }
 
 #apply-filter {
-  background-color: darkorange;
+  background-color: blueviolet;
   color: white;
   padding: 14px;
   font-size: 14px;
