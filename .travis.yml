@@ -1,16 +1,16 @@
 language: node_js
 
 env:
-     - DB=postgresql://postgres@localhost:5432/registration_numbers_test
+     - DB=postgresql://postgres@localhost:5432/registration_numbers
 node_js:
         - "8.9.4"
 
 before_script:
   # - sudo sed -i -e '/local.*peer/s/postgres/all/' -e 's/peer\|md5/trust/g' /etc/postgresql/*/main/pg_hba.conf
   # - sudo service postgresql restart
-  - psql -c 'create database  registration_numbers_test;' -U postgres
-  - psql -U postgres -d registration_numbers_test -a -f tables.sql
-  - psql -U postgres -d registration_numbers_test -a -f tables-insert.sql
+  - psql -c 'create database  registration_numbers;' -U postgres
+  - psql -U postgres -d registration_numbers -a -f tables.sql
+  - psql -U postgres -d registration_numbers -a -f tables-insert.sql
 
 addons:
     apt:

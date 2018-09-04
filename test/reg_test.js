@@ -5,7 +5,7 @@ const RegistrationFactory = require('../registration-numbers-factory')
 const pg = require('pg')
 const Pool = pg.Pool
 
-const connectionString = process.env.DATABASE_URL || 'postgresql://coder:pg123@localhost:5432/registration_numbers_test'
+const connectionString = process.env.DATABASE_URL || 'postgresql://coder:pg123@localhost:5432/registration_numbers'
 
 const pool = new Pool({
   connectionString
