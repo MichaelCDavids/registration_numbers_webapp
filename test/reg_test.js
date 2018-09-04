@@ -14,7 +14,7 @@ const pool = new Pool({
 describe('The Registration Numbers WebApp', function () {
   beforeEach(async function () {
     await pool.query('delete from registrations;')
-  })
+  });
 
   describe('The addRegistrationNumber function', function () {
     it('should add a valid registration number', async function () {
