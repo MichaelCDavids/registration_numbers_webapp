@@ -13,7 +13,7 @@ const pool = new Pool({
 
 describe('The Registration Numbers WebApp', function () {
   beforeEach(async function () {
-    await pool.query('delete from registrations;')
+    await pool.query('delete from registrations')
   });
 
   describe('The addRegistrationNumber function', function () {
@@ -169,7 +169,7 @@ describe('The Registration Numbers WebApp', function () {
       })
   })
 
-  after(function () {
-    pool.end()
+  after(async function () {
+    await pool.end()
   })
 })
