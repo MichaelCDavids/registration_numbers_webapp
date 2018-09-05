@@ -1,4 +1,8 @@
 /*  */
+body {
+  height: auto;
+}
+
 #header{
   text-align: center;
   color: aliceblue;
@@ -19,15 +23,17 @@
 }
 
 footer {
+  position: relative;
   text-align: center;
-  color: aliceblue;
   background-color: blueviolet;
   width:  100%;
+  color: aliceblue;
   height: 70px;
 }
 footer p {
   padding-top: 6px;
   color: aliceblue;
+  position: relative;
 }
 
 .car {
@@ -37,7 +43,7 @@ footer p {
 /* Page Wrapper */
 .page-wrapper {
   width: 90%;
-  height: 429px;
+  height: 559px;
   background-color: ghostwhite;
   margin: 0 auto;
   text-align: center;
@@ -91,7 +97,7 @@ footer p {
 
 #selectFilter {
   height: 3em;
-  width:10em;
+  width:14em;
   border-radius: 6px;
 }
 
