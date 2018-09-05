@@ -1,9 +1,3 @@
-<head>
-    <meta charset="utf-8">
-    <title>Mikes Registrations</title>
-    <link rel="stylesheet" href="/css/registration_numbers.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
 <div class="page-wrapper">
     <i class="fas fa-car fs-10x car"></i>
     <p>Please enter a Western Cape Registration Number</p>
@@ -20,7 +14,7 @@
             <option value="{{this.starts_with}}">{{this.town_name}}</option>
             {{/each}}
         </select>
-        <button type="submit" id="apply-filter" name="apply-filter">Apply</button>
+        {{!-- <button type="submit" id="apply-filter" name="apply-filter">Apply</button> --}}
     </div>
 
     {{#if messages.info}}
@@ -28,6 +22,7 @@
         <p>{{messages.info}}</p>
     </div>
     {{/if}}
+
     <div class="output-section">
         <ul id="my-list" class="registration_list">
             {{#each data.registrations}}
@@ -35,5 +30,10 @@
             {{/each}}
         </ul>
     </div>
-
 </div>
+<footer>
+    <div>
+        <p></p>
+        <p>Done by: Mike 2018 projectcodex.co</p>
+    </div>
+</footer>
