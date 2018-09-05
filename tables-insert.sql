@@ -1,4 +1,5 @@
 delete from towns;
+insert into towns (starts_with, town_name) values ('','Select');
 insert into towns (starts_with, town_name) values ('all','All');
 insert into towns (starts_with, town_name) values ('CA','Cape Town'); 
 insert into towns (starts_with, town_name) values ('CAM','Caledon & Kleinmond');
