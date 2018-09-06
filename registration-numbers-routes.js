@@ -31,8 +31,8 @@ module.exports = function (registrationNumbersInstance) {
 
     async function registration_numbers_post (req, res) {
         let numberPlate = req.params.plate || req.body.registrationNumber;
-        formatedPlate = numberPlate.replace('%20', ' ');
-        let message = await registrationNumbersInstance.addRegistration(numberPlate);
+        let formattedPlate = numberPlate.replace('%20', ' ');
+        let message = await registrationNumbersInstance.addRegistration(formattedPlate);
         let data = {
             towns: await registrationNumbersInstance.getTowns(),
             registrations: await registrationNumbersInstance.filterRegistration()
