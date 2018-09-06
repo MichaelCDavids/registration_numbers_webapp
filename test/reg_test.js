@@ -33,7 +33,7 @@ describe(' The townList function', function () {
     it('should return a list of all the towns that are in the database', async function () {
         let RegistrationInstance = RegistrationFactory(pool);
         let towns = await RegistrationInstance.getTowns();
-        assert.deepEqual(towns, [ { id: 1, town_name: 'Select', starts_with: '' }, { id: 2, town_name: 'All', starts_with: 'all' },
+        assert.deepEqual(towns, [ { id: 1, town_name: 'Select Town', starts_with: '' }, { id: 2, town_name: 'All', starts_with: 'all' },
             { id: 3, town_name: 'Cape Town', starts_with: 'CA' },
             { id: 4, town_name: 'Caledon & Kleinmond', starts_with: 'CAM' },
             { id: 5,
